@@ -266,7 +266,7 @@ html {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.428571429;
   color: #333333;
   background-color: #ffffff;
@@ -6061,10 +6061,65 @@ td.visible-print {
      margin-left: auto;
      margin-right: auto;
 }
-.footer{
-    margin-bottom: 10px;
-}
+
 #upload {
-  background-color: red;
+  background-color: #16a085;
   padding:10px;
+}
+.header {
+  background-color:#16a085;
+  border-style:solid 0px;
+  border-top: solid 0px #333333;
+  padding:100px 20px;
+  color:#ecf0f1;
+} 
+.upload {
+ /* border-style:solid 0px;
+  border-bottom: solid 10px #333333;*/
+}
+
+.uploadform {
+  background-color:#333333;
+  margin-top: 20px;
+  color:#ecf0f1;
+}
+.uploadform a{
+  color:#ecf0f1;
+  text-decoration: underline;
+}
+.footer-wrapper{
+  background-color:#333333;
+  height:280px; 
+}
+.footer-button{
+    margin-top: 30px;
+}
+.section {
+  padding:20px;
+  border-style:solid 0px;
+  border-bottom: solid 10px #333333;
+
+}
+.green-sea-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #16a085;
+  border: 0;
+  border-bottom: 2px solid #14947b;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #14947b;
+  box-shadow: inset 0 -2px #14947b;
+}
+.green-sea-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

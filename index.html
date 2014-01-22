@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 	
@@ -8,21 +8,32 @@
 </head>
 
 <body>
-<div class="container">	
-	<div class="center col-md-8">
-		<h1 id="top">RunPal</h1>
-			<h3>Let's run together</h3>
-				<p>RunPal is a project aiming at exploring how to utilise run data in a new way. The focus is on the social experience running can be and how to help people to experience that.</p>
+
+<div class="col-md-12 header">	
+	<div class="col-md-8 center">
+		
+			<h1 class="" id="top">RunPal</h1>
+
+				<h3>Let's run together</h3>
+				<h4><p>RunPal is a project aiming at exploring how to utilise run data in a new way.</p> <p>The focus is on the social experience running can be and how to help people to experience that.</p></h4>
+	</div>	
+</div>			
+
+<div class="section col-md-12 upload row">	
+		<div class="col-md-4 col-md-offset-2">
 			<h3>Participate in the research</h3>
 				<p>As part of the research I'm hoping to collect a lot of run data. The reason this data is interesting for me is that I want to discover patterns and habits for runners, as I believe knowing this can help determine how to help people engage in social running.</p>
 				<p>You can participate in my research by sharing your run data with me. I'm interested in data from runners of all kind no matter if you hit the streets or trails everyday in your flash gear or if running is somewhat of a coincidence for you. I will of course keep all your data totally anonymous and not share it with anyone, this is only for test purposes.</p>
-				<p>Now there are tons of services out there that lets you track your runs, but exporting that data demands a little bit of work. I've included guides to the most popular services here. If you should have any questions abouth any of the methods don't hestitate to <a href="mailto:sprint@runpal.org">contact me</a>.
-				<ul>
-					<li><a href="#tapiriik">Submit data from RunKeeper, Carmin Connect and more</a></li>
-					<li><a href="#nike">Submit data from Nike+</a></li>
-					<li><a href="#rungap">Submit data from Endmomondo and several other services</a></li>
-				</ul>
-				<p style="font-weight:bold">After exporting your data with the help of the guides, please upload using the upload form below.</p>
+				<p>Now there are tons of services out there that lets you track your runs, but exporting that data-so you can lend it to me-demands a little bit of work. I've included guides to the most popular services here. If you should have any questions abouth any of the methods don't hestitate to <a href="mailto:sprint@runpal.org">contact me</a>.	
+		</div>	
+
+	<div class="uploadform section col-md-4">		
+				
+					<p><a href="#tapiriik">Submit data from RunKeeper, Carmin Connect and more</a></p>
+					<p><a href="#nike">Submit data from Nike+</a><br></p>
+					<p><a href="#rungap">Submit data from Endmomondo and several other services</a></p>
+				
+				<p>After exporting your data with the help of the guides, please upload using the upload form below.</p>
 				<div id="upload">	
 					<form action="upload_file.php" method="post"
 					enctype="multipart/form-data" target="_blank">
@@ -30,32 +41,42 @@
 					<input type="file" name="upload[]" multiple="multiple" accept="file/tcx, file/gpx, file/zip"><br>
 					<input type="submit" name="submit" value="Submit">
 					</form>
+			
 				</div>	
-			<div class="option1 col-md-12">
-				<h4 id="tapiriik">Submit from RunKeeper, Garmin Connect and more</h4>
-				<a href="https://tapiriik.com/" target="_blank"><img src="assets/tapirik.jpg" class="img-responsive" alt="Responsive Image"></a>
-				<p>Tapiriik lets you sync your data between Runkeeper, Strava, Garmin Connect, SportsTracks, Training Peaks and Dropbox. So for easily sharing your run data with me, go to <a href="https://tapiriik.com/" target="_blank">Tapiriik</a> and sync your prefered service to your dropbox account. Tapiriik will then make a folder in your Apps folder in your dropbox account containing all your data from your choosen service.<a href="https://tapiriik.com/" target="_blank"><img src="assets/tapirik_dropbox.jpg" class="img-responsive" alt="Responsive Image"></a>
-				<p>The content in this folder is what I'm after. After downloading the files <a href="#upload">upload your upload files</a>. If it's not possible to choose several files (Internet Explorer) please zip and upload that .zip file.</p>
-			</div>
-			<div class="option2 col-md-12">	
-				<h4 id="nike">Submit from Nike+</h4>
-				<p>To bulk export from Nike+ it's possibly to use the <a href="https://nikeplusexporter.rhysmccaig.com/" target="_blank">Nike+ Data Exporter</a> developed by <a href="https://twitter.com/mccaig">@mccaig</a>. You log-in with your normal Nike+ ID and it retrieves your Nike+ Data. 
-				<a href="https://nikeplusexporter.rhysmccaig.com/" target="_blank"><img src="assets/nike1.jpg" class="img-responsive" alt="Responsive Image"></a>	
-				You then select all and scroll to the bottom to click download. Please choose the .tcx file format and download. After downloading the files <a href="#upload">upload your upload files</a>. If it's not possible to choose several files (Internet Explorer) please zip and upload that .zip file.
-				<a href="https://nikeplusexporter.rhysmccaig.com/" target="_blank"><img src="assets/nike2.jpg" class="img-responsive" alt="Responsive Image"></a>
-			</div>
-			<div class="option3 col-md-12">
-				<h4 id="rungap">Submit from Endomondo and several other services</h4>
-				<p>Like many other services Endomondo doesn't offer a bulk export feature natively. To actually export your data (if not done one by one from the Endomondo website) the only way I've found is to use the iOS app <a href="https://itunes.apple.com/dk/app/rungap-workout-tracker/id534460198?mt=8" target="blank">Run Gap</a>. Run Gap lets you sync your data from 13 services including Endomondo, and from the app you can then export the data to dropbox. Just choose the services you want to sync and then go to "Share & Export" and choose dropbox. Run Gap will then create a folder in the Apps folder in your Dropbox, with the exported rundata. After downloading the files <a href="#upload">upload your upload files</a>. If it's not possible to choose several files (Internet Explorer) please zip and upload that .zip file.</p>
-				<a href="https://itunes.apple.com/dk/app/rungap-workout-tracker/id534460198?mt=8" target="_blank"><img src="assets/rungap.jpg" class="img-responsive" alt="Responsive Image"></a>
-			</div>
-			<br>
-			<br>
-			<a href="#top"><button class="center-block">GO TO TOP</button></a>
-			<br>
-			<br>
 	</div>
-</div>
+</div>				
+	<div class="row section option1 col-md-12">
+		
+				<h4 class="col-md-offset-2" id="tapiriik">Submit from RunKeeper, Garmin Connect and more</h4>
+				
+				<div class="col-md-4 col-md-offset-2"><a href="https://tapiriik.com/" target="_blank"><img src="assets/tapirik.jpg" class="img-responsive" alt="Responsive Image"></a>
+				<p>Tapiriik lets you sync your data between Runkeeper, Strava, Garmin Connect, SportsTracks, Training Peaks and Dropbox. So for easily sharing your run data with me, go to <a href="https://tapiriik.com/" target="_blank">Tapiriik</a> and sync your prefered service to your dropbox account. Tapiriik will then make a folder in your Apps folder in your dropbox account containing all your data from your choosen service.</div>
+
+				<div class="col-md-4"><a href="assets/tapirik_dropbox.jpg" target="_blank"><img src="assets/tapirik_dropbox.jpg" class="img-responsive" alt="Responsive Image"></a>
+				<p>The content in this folder is what I'm after. After downloading the files <a href="#upload">upload your upload files</a>. If it's not possible to choose several files (Internet Explorer) please zip and upload that .zip file.</p></div>
+				
+	</div>
+	<div class="row section option2 col-md-12">		
+			<h4 class="col-md-offset-2" id="nike">Submit from Nike+</h4>
+				<div class="col-md-4 col-md-offset-2">
+					<a href="assets/nike1.jpg" target="_blank"><img src="assets/nike1.jpg" class="img-responsive" alt="Responsive Image"></a><p>To bulk export from Nike+ it's possibly to use the <a href="https://nikeplusexporter.rhysmccaig.com/" target="_blank">Nike+ Data Exporter</a> developed by <a href="https://twitter.com/mccaig">@mccaig</a>. You log-in with your normal Nike+ ID and it retrieves your Nike+ Data.
+				</div>	
+				<div class="col-md-4">
+					<a href="assets/nike2.jpg" target="_blank"><img src="assets/nike2.jpg" class="img-responsive" alt="Responsive Image"></a>You then select all and scroll to the bottom to click download. Please choose the .tcx file format and download. After downloading the files <a href="#upload">upload your upload files</a>. If it's not possible to choose several files (Internet Explorer) please zip and upload that .zip file.
+				</div>
+	</div>
+	<div class="row section option3 col-md-12">
+			<h4 class="col-md-offset-2" id="rungap">Submit from Endomondo and several other services</h4>
+				<div class="col-md-4 col-md-offset-2"><p>Like many other services Endomondo doesn't offer a bulk export feature natively. To actually export your data (if not done one by one from the Endomondo website) the only way I've found is to use the iOS app <a href="https://itunes.apple.com/dk/app/rungap-workout-tracker/id534460198?mt=8" target="blank">Run Gap</a>. Run Gap lets you sync your data from 13 services including Endomondo, and from the app you can then export the data to dropbox. Just choose the services you want to sync and then go to "Share & Export" and choose dropbox. Run Gap will then create a folder in the Apps folder in your Dropbox, with the exported rundata. After downloading the files <a href="#upload">upload your upload files</a>. If it's not possible to choose several files (Internet Explorer) please zip and upload that .zip file.</p></div>
+				<div class="col-md-4"><a href="https://itunes.apple.com/dk/app/rungap-workout-tracker/id534460198?mt=8" target="_blank"><img src="assets/rungap.jpg" class="img-responsive" alt="Responsive Image"></a></div>
+			
+	</div>
+	<div class="footer-wrapper col-md-12">
+			
+			<div class="col-md-2 col-md-offset-5" style="margin-top:80px"><a href="#top"><p><input type="submit" value="Go to top" class="green-sea-flat-button footer-button"></a>
+			</p></div>	
+		
+	</div>	
 </body>
 
 </html>

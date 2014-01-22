@@ -48,7 +48,7 @@ for($i=0; $i<count($_FILES['upload']['name']); $i++) {
   //Get the temp file path
   $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
 
-  echo "Tak for filen";
+  echo "Thanks for participating";
 
   //Make sure we have a filepath
   if ($tmpFilePath != ""){

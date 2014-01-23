@@ -6084,7 +6084,7 @@ td.visible-print {
 
 .uploadform {
   background-color:#333333;
-  margin-top: 20px;
+/*  margin-top: 20px*/;
   color:#ecf0f1;
   padding-left: 15px;
 
@@ -6092,6 +6092,9 @@ td.visible-print {
 .uploadform a{
   color:#ecf0f1;
   text-decoration: underline;
+}
+.uploadform a:hover{
+  color:#D4D8D9;
 }
 .footer-wrapper{
   background-color:#333333;
@@ -6147,19 +6150,7 @@ td.visible-print {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.animate {
-    animation: moveUp 1.5s ease-in-out 1s backwards;
-}
-@keyframes moveDown{
-    0% { 
-        transform: translateY(-40px); 
-        opacity: 0;
-    }
-    100% { 
-        transform: translateY(0px);  
-        opacity: 1;
-    }
-}
+
 .arrow-up {
   width: 0; 
   height: 0; 

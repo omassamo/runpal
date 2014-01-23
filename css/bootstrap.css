@@ -680,7 +680,7 @@ pre code {
 }
 .container {
   margin-right: auto;
-  margin-left: auto;
+  margin-left: auto;x
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -6065,8 +6065,7 @@ td.visible-print {
 }
 
 #upload {
-  background-color: #16a085;
-  padding:10px;
+
 }
 .header {
   background-color:#16a085;
@@ -6078,9 +6077,9 @@ td.visible-print {
 .header-wrapper{
 
 }
-.upload {
- /* border-style:solid 0px;
-  border-bottom: solid 10px #333333;*/
+.file-finder {
+  background-color: #16a085;
+  padding:10px;
 }
 
 .uploadform {
@@ -6106,9 +6105,22 @@ td.visible-print {
   border-bottom: solid 10px #333333;*/
 }
 .section-wrapper{
-    border-style:solid 0px;
+  border-style:solid 0px;
   border-bottom: solid 10px #333333;
   background-color:#ecf0f1; 
+}
+.section-header{
+  width:auto;
+  height:40px;
+  padding-left: 15px;
+/*  padding-bottom: 15px;*/
+}
+
+.content-container{
+  padding: 0 15px;
+}
+.round-corners {
+  border-radius: 0.3em;
 }
 .green-sea-flat-button {
   position: relative;
@@ -6127,14 +6139,25 @@ td.visible-print {
   -webkit-box-shadow: inset 0 -2px #14947b;
   box-shadow: inset 0 -2px #14947b;
 }
-.round-corners {
-  border-radius: 0.3em;
-}
+
 .green-sea-flat-button:active {
   top: 1px;
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+.animate {
+    animation: moveUp 1.5s ease-in-out 1s backwards;
+}
+@keyframes moveDown{
+    0% { 
+        transform: translateY(-40px); 
+        opacity: 0;
+    }
+    100% { 
+        transform: translateY(0px);  
+        opacity: 1;
+    }
 }
 .arrow-up {
   width: 0; 

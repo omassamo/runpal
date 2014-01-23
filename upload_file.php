@@ -36,6 +36,11 @@
 
 
 //Loop through each file
+  // $allowedExts = array("zip","tcx","gpx");
+  // $temp = explode(".", $_FILES["file"]["name"]);
+  // $extension = end($temp);
+if ($_FILES["file"]["size"] < 100000000)
+{
 for($i=0; $i<count($_FILES['upload']['name']); $i++) {
 
   date_default_timezone_set("Europe/Berlin"); 
@@ -65,5 +70,8 @@ for($i=0; $i<count($_FILES['upload']['name']); $i++) {
     }
   }
 }
-
+}else
+  {
+      echo "Error";
+  }
 ?>

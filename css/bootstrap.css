@@ -270,7 +270,7 @@ body {
   font-size: 16px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #ecf0f1;
 }
 input,
 button,
@@ -1874,7 +1874,7 @@ textarea.input-lg {
   }
   .form-inline .radio input[type="radio"],
   .form-inline .checkbox input[type="checkbox"] {
-    float: none;
+    float: left;
     margin-left: 0;
   }
 }
@@ -6111,6 +6111,11 @@ td.visible-print {
 .section-wrapper{
   border-style:solid 0px;
   border-bottom: solid 10px #333333;
+  background-color:#ecf0f1; 
+}
+.section-wrapper2{
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color:#ecf0f1; 
 }
 .section-header{

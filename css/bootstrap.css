@@ -2009,8 +2009,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #16a085;
+ /* border-color: #333333;*/
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2018,8 +2018,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  background-color: #16a085;
+  /*border-color: #285e8e;*/
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -6163,4 +6163,11 @@ td.visible-print {
   border-right: 5px solid transparent;
   
   border-bottom: 5px solid #16a085;
+}
+
+#map_canvas {
+background-color:#ffffff;
+/*width: 600px;*/
+height:400px;
+
 }

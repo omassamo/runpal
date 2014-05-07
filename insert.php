@@ -35,9 +35,10 @@ $dist3 = mysqli_real_escape_string($con, $_POST['dist3']);
 $info1 = mysqli_real_escape_string($con, $_POST['info1']);
 $info2 = mysqli_real_escape_string($con, $_POST['info2']);
 $info3 = mysqli_real_escape_string($con, $_POST['info3']);
+$feedback = mysqli_real_escape_string($con, $_POST['feedback']);
 
-$sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, info1, info2, info3)
-VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$info1', '$info2', '$info3')";
+$sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, info1, info2, info3, feedback)
+VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$info1', '$info2', '$info3', '$feedback')";
 
 // if(isset($_POST['day'])) {
 // $day = implode(",", $_POST['day']);   

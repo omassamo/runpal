@@ -523,7 +523,7 @@ ol ol {
 }
 .list-inline > li {
   display: inline-block;
-  padding-left: 5px;
+  padding-left: 0px;
   padding-right: 5px;
 }
 .list-inline > li:first-child {

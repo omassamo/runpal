@@ -25,14 +25,24 @@ VALUES ('$feedback')";
 if (!mysqli_query($con,$sql)) {
   die(' Error: ' . mysqli_error($con));
 }
-echo "Thanks for your feedback!";
+// echo "Thanks for your feedback!";
 
 // // url for localhost
-// header( 'Location: http://localhost:8888/runpal/runpal2.html' ) ;
+// header( 'Location: http://localhost:8888/runpal/runpal3.html' ) ;
 
-// // url for Deployed
-// // header( 'Location: http://runpal.org/runpal2.html' ) ;
+// url for Deployed
+header( 'Location: http://runpal.org/runpal3.html' ) ;
 
 mysqli_close($con);
 
 ?>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47568451-1', 'runpal.org');
+  ga('send', 'pageview');
+
+</script>

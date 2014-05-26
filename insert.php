@@ -56,8 +56,10 @@ if (!mysqli_query($con,$sql)) {
 // url for localhost
 header( 'Location: http://localhost:8888/runpal/runpal2.html' ) ;
 
-// url for Deployed
+//  Berlin url for Deployed
 // header( 'Location: http://runpal.org/runpal2.html' ) ;
+//  CPH url for Deployed
+// header( 'Location: http://runpal.org/runpalcph.html' ) ;
 
 mysqli_close($con);
 

@@ -16,12 +16,6 @@ $feedback = mysqli_real_escape_string($con, $_POST['feedback']);
 $sql="INSERT INTO Runpal (feedback)
 VALUES ('$feedback')";
 
-// if(isset($_POST['day'])) {
-// $day = implode(",", $_POST['day']);   
-// } else {
-// $day = "";
-// }
-
 if (!mysqli_query($con,$sql)) {
   die(' Error: ' . mysqli_error($con));
 }

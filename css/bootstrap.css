@@ -6172,3 +6172,7 @@ background-color:#ffffff;
 height:400px;
 
 }
+
+li {
+list-style-type: none;
+}

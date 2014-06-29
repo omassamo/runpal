@@ -14,7 +14,6 @@ if (mysqli_connect_errno()) {
 $name = mysqli_real_escape_string($con, $_POST['name']);
 $age = mysqli_real_escape_string($con, $_POST['age']);
 $email = mysqli_real_escape_string($con, $_POST['email']);
-// $email = mysqli_real_escape_string($con, $_POST['email']);
 $sex = mysqli_real_escape_string($con, $_POST['sex']);
 $day1 = mysqli_real_escape_string($con, $_POST['day1']);
 $day2 = mysqli_real_escape_string($con, $_POST['day2']);
@@ -37,10 +36,10 @@ $goal = mysqli_real_escape_string($con, $_POST['goal']);
 $info1 = mysqli_real_escape_string($con, $_POST['info1']);
 $info2 = mysqli_real_escape_string($con, $_POST['info2']);
 $info3 = mysqli_real_escape_string($con, $_POST['info3']);
-$feedback = mysqli_real_escape_string($con, $_POST['feedback']);
+// $feedback = mysqli_real_escape_string($con, $_POST['feedback']);
 
-$sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, goal, info1, info2, info3, feedback)
-VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$goal' '$info1', '$info2', '$info3', '$feedback')";
+$sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, goal, info1, info2, info3)
+VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$goal', '$info1', '$info2', '$info3')";
 
 // if(isset($_POST['day'])) {
 // $day = implode(",", $_POST['day']);   
@@ -54,12 +53,12 @@ if (!mysqli_query($con,$sql)) {
 // echo "1 record added";
 
 // url for localhost
-header( 'Location: http://localhost:8888/runpal/runpal2.html' ) ;
+header( 'Location: http://localhost:8888/runpal/runpal_results.php' ) ;
 
-//  Berlin url for Deployed
+// Berlin url for Deployed
 // header( 'Location: http://runpal.org/runpal2.html' ) ;
 //  CPH url for Deployed
-// header( 'Location: http://runpal.org/runpalcph.html' ) ;
+// header( 'Location: http://runpal.org/runpalscph.html' ) ;
 
 mysqli_close($con);
 

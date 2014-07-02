@@ -1,23 +1,30 @@
 <html>
-<head>
-  <title>RunPal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/gif" href="assets/favicon.gif">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="fonts/MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-
-  <title>RunPal</title>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="assets/favicon.gif">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/MyFontsWebfontsKit/MyFontsWebfontsKit.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <title>
+      RunPal
+    </title>
   </head>
-
-
-<div class="content-container"> 
-
-  <!-- Header -->
-
-<body>
-  <div class="col-md-12 col-xl-12 col-xs-12 header" id="top">
-    <h1 class="">Contact a Run Pal</h1>
-  </div>  
+  
+  <!-- Container start -->
+  
+  <div class="content-container">
+    
+    
+    <!-- Header -->
+    
+    <body>
+      <div class="col-md-12 col-xl-12 col-xs-12 header" id="top">
+        <h1 class="">
+          Contact a Run Pal
+        </h1>
+      </div>
 
 <?php
 //get distance between two location points
@@ -43,7 +50,54 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 // echo distance(32.9697, -96.80322, 29.46786, -98.53506, "K") . " Kilometers<br>";
 
 ?>
+  
+<div class="col-md-12 section-wrapper2 center">
+  
+  <!-- <h3>
+    Show Run Pals from ...
+  </h3> -->
+ <!--  <a id="all" href="runpal_results.php">
+    <button class="btn btn-primary btn-sm">
+      Everywhere
+    </button>
+  </a> -->
+  
+  <!-- Select unique cities and add button -->
+  
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+      Choose city
+      <span class="caret">
+      </span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="runpal_results.php">All cities</a></li>
 
+<?php 
+    $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
+        mysql_select_db('runpal');
+
+    $query = "SELECT * FROM Runpal group by city order by city DESC"; //You don't need a ; like you do in SQL
+    $result = mysql_query($query);    
+    $num_rows = mysql_num_rows($result);
+    // $city_nospace = str_replace(' ', '', $row['city']);
+    // $city_nocaps = strtolower($city_nospace);
+
+
+    while($row = mysql_fetch_array($result)){
+          if(strlen($row['city']) > 0){
+            // $city_nospace = str_replace(' ', '', $row['city']); // replace spaces
+            // $city_nocaps = strtolower($city_nospace); // replace caps
+            echo "<li value='" . $row['city'] . "' role='presentation'><a role='menuitem' tabindex='-1' href='#'>" . $row['city'] . "</a></li>";
+          }
+          };
+     mysql_close(); //Make sure to close out the database connection      
+?>
+    </ul>
+  </div>
+</div>
+
+  <!-- <div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'> -->
 <?php
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
     mysql_select_db('runpal');
@@ -58,6 +112,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
     // Set male/female placeholder images  
     $img_male = 'assets/male.jpg';
     $img_female = 'assets/female.jpg';  
+
 
     while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
         if(strlen($row['city']) > 1){
@@ -83,7 +138,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
               } else {
                 $profile_img = $img_female;
               }
-              }
+              };
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";
            
@@ -104,7 +159,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                 // };
 
                 echo "<li>" . "<img class='img-responsive'src=$profile_img>" . "</li>";
-                echo "<li>" . "Age:&nbsp;" . $row['age'] . "</li>";
+                echo "<li>" . "<strong>Age:</strong>&nbsp;" . $row['age'] . "</li>";
                 echo "<li>" . "City:&nbsp;" . $row['city'] . "</li>";
                 echo "<li>" . "Usually starting from:&nbsp;" . $row['zip'] . "</li>";
 
@@ -238,9 +293,11 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
                 echo "<li>" . "<a href='mailto:" . $row['email'] . "?subject=Run together?&body=Hey " . $row['name'] . "! Our profiles on Run Pal match - let us go for a run together!'><button class='btn btn-primary btn-sm'>Contact</button></a>" . "</li>";
 
+                echo "</ul>";
             //     // echo "<li>latitude: " . $lat . " longitude: " . $long . "</li>";
             //  echo "</tr>";  //$row['index'] the index here is a field name
-             echo "</div>";
+                echo "</div>";
+             
         }else
         {
             // echo "<tr>";
@@ -254,7 +311,10 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
     mysql_close(); //Make sure to close out the database connection
 
-?>
 
-</body>
-</div>
+?>
+<!-- </div> -->
+
+    </body>
+  </div>
+</html>

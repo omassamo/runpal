@@ -1,6 +1,6 @@
 <?php
 // Localhost connection to database
-$con = mysqli_connect("localhost", "root", "12345", "test");
+$con = mysqli_connect("localhost", "root", "root", "Runpal");
 
 // Deployed connection to database
 // $con = mysqli_connect("localhost", "i72322", "29Sushi98", "runpal_org_01");

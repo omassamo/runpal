@@ -54,20 +54,122 @@ if (!mysqli_query($con,$sql)) {
 // echo "1 record added";
 
 // url for localhost
-header( 'Location: http://localhost:8888/runpal/runpal_results.php' ) ;
+// header( 'Location: http://localhost:8888/runpal/runpal_results.php' ) ;
 
 // Berlin url for Deployed
 // header( 'Location: http://runpal.org/runpal2.html' ) ;
 //  CPH url for Deployed
 // header( 'Location: http://runpal.org/runpalscph.html' ) ;
 
+// echo "connection";
 mysqli_close($con);
 
 ?>
 
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="assets/favicon.gif">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/MyFontsWebfontsKit/MyFontsWebfontsKit.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <title>
+      RunPal
+    </title>
+  </head>
+  
+  <!-- Container start -->
+  
+  <div class="content-container">
+    
+    
+    <!-- Header -->
+    
+    <body>
+      <div class="col-md-12 col-xl-12 col-xs-12 header" id="top">
+        <h1 class="">
+          Contact a Run Pal
+        </h1>
+      </div>
+
+<?php
+//get distance between two location points
+function distance($lat1, $lon1, $lat2, $lon2, $unit) {
+
+  $theta = $lon1 - $lon2;
+  $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+  $dist = acos($dist);
+  $dist = rad2deg($dist);
+  $miles = $dist * 60 * 1.1515;
+  $unit = strtoupper($unit);
+
+  if ($unit == "K") {
+    return ($miles * 1.609344);
+  } else if ($unit == "N") {
+      return ($miles * 0.8684);
+    } else {
+        return $miles;
+      }
+}
+
+// echo distance(32.9697, -96.80322, 29.46786, -98.53506, "M") . " Miles<br>";
+// echo distance(32.9697, -96.80322, 29.46786, -98.53506, "K") . " Kilometers<br>";
+
+?>
+  
+<div class="col-md-12 section-wrapper2 center">
+  
+  <!-- <h3>
+    Show Run Pals from ...
+  </h3> -->
+ <!--  <a id="all" href="runpal_results.php">
+    <button class="btn btn-primary btn-sm">
+      Everywhere
+    </button>
+  </a> -->
+  
+  <!-- Select unique cities and add button -->
+  
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+      Choose city
+      <span class="caret">
+      </span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <form method="post">
+      <li role="presentation"><input type="submit" name="city" value="All cities"/><a role="menuitem" tabindex="-1" href="#"></a></li>
+
+<?php 
+    $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
+        mysql_select_db('runpal');
+
+    $query = "SELECT * FROM Runpal group by city order by city ASC"; //You don't need a ; like you do in SQL
+    $result = mysql_query($query);    
+    $num_rows = mysql_num_rows($result);
+    // $city_nospace = str_replace(' ', '', $row['city']);
+    // $city_nocaps = strtolower($city_nospace);
+
+
+    while($row = mysql_fetch_array($result)){
+          if(strlen($row['city']) > 0){
+            // $city_nospace = str_replace(' ', '', $row['city']); // replace spaces
+            // $city_nocaps = strtolower($city_nospace); // replace caps
+            echo "<li><input type='submit' name='city' value='" . $row['city'] . "' role='presentation'><a role='menuitem' tabindex='-1' href='#'/></a></li>";
+          }
+          };
+     mysql_close(); //Make sure to close out the database connection      
+?>
+      </form>
+    </ul>
+  </div>
+</div>
+
 <?php
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
-    mysql_select_db('runpal');
+        mysql_select_db('runpal');
     // echo "connection";
 
     $city = $_POST['city'];
@@ -288,14 +390,19 @@ mysqli_close($con);
 
 
 ?>
+      <form action="insert2.php" method="post">
+       
+        <div class="section-wrapper2 col-md-4 col-xl-4 col-xs-12">
+          <h3>What do you think about <br> the Run Pal concept?</h3> 
+          <input class="form-control" type="text" textarea rows="10" name="feedback" placeholder="Enter your anonymous feedback">
+        <br>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <!-- submit--> 
 
-  ga('create', 'UA-47568451-1', 'runpal.org');
-  ga('send', 'pageview');
+        <p><button class="btn btn-primary btn-lg col-md-12 col-xl-12 col-xs-12" input type="submit"><h2>Submit feedback</h2></button></p>
+        </div>
+      </form>
+    </body>
+  </div>
+</html>
 
-</script>

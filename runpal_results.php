@@ -406,7 +406,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
         <!-- submit--> 
 
-        <p><button class="btn btn-primary btn-lg col-md-4 col-xl-4 col-xs-12" input type="submit"><h2>Submit feedback</h2></button></p>
+        <p><button class="btn btn-primary btn-lg col-md-12 col-xl-12 col-xs-12" input type="submit"><h2>Submit feedback</h2></button></p>
         </div>
       </form>
     </body>

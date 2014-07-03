@@ -145,8 +145,11 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
+background: none;
+border: none;
+font-size: 1em;
+color: #333333;
+cursor: pointer;
 }
 button[disabled],
 html input[disabled] {
@@ -156,6 +159,7 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
+  margin:4px;
 }
 input[type="search"] {
   -webkit-appearance: textfield;
@@ -1611,7 +1615,7 @@ input[type="search"] {
 }
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
+  margin: 4px;
   margin-top: 1px \9;
   /* IE8-9 */
 

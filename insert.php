@@ -11,7 +11,9 @@ if (mysqli_connect_errno()) {
 }
 
 $target = "assets/"; 
-$photo_name = str_replace(' ', '', $_POST['name']) . ".jpg";  
+$photo = ($_FILES['photo']['name']);
+$ext = pathinfo($photo, PATHINFO_EXTENSION);
+$photo_name = str_replace(' ', '', $_POST['name']) . "." . $ext;  
 $target = $target . $photo_name; 
 
 // escape variables for security
@@ -41,10 +43,9 @@ $info1 = mysqli_real_escape_string($con, $_POST['info1']);
 $info2 = mysqli_real_escape_string($con, $_POST['info2']);
 $info3 = mysqli_real_escape_string($con, $_POST['info3']);
 // $feedback = mysqli_real_escape_string($con, $_POST['feedback']);
-$photo = ($_FILES['photo']['name']);
 
 $sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, goal, info1, info2, info3, photo)
-VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$goal', '$info1', '$info2', '$info3', '$photo')";
+VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$goal', '$info1', '$info2', '$info3', '$photo_name')";
 
 
 // if(isset($_POST['day'])) {

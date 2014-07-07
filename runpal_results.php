@@ -75,8 +75,13 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
       <li role="presentation"><input type="submit" name="city" value="All cities"/><a role="menuitem" tabindex="-1" href="#"></a></li>
 
 <?php 
+    // Localhost db connection
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
         mysql_select_db('runpal');
+
+    // Deployed connection to database
+    // $connection = mysql_connect("localhost", "i72322", "29Sushi98");
+    //   mysql_select_db('runpal_org_01');
 
     $query = "SELECT * FROM Runpal group by city order by city ASC"; //You don't need a ; like you do in SQL
     $result = mysql_query($query);    
@@ -100,9 +105,13 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 </div>
 
 <?php
+    // Localhost db connection
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
         mysql_select_db('runpal');
-    // echo "connection";
+
+    // Deployed connection to database
+    // $connection = mysql_connect("localhost", "i72322", "29Sushi98");
+    //   mysql_select_db('runpal_org_01');
 
     $city = $_POST['city'];
     // $query = "SELECT * FROM Runpal WHERE city= " .$city; //You don't need a ; like you do in SQL:: where city=post
@@ -135,19 +144,18 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             $long = $response['results'][0]['geometry']['location']['lng'];
 
             // set img name for each user
-            $imgname = str_replace(' ', '', $row['name']);  
+            // $imgname = str_replace(' ', '', $row['name']);  
 
-            // Check if profile img exists - if not use male/female placeholder img
-            $filename = 'assets/' . $imgname . '.jpg';
-              if (file_exists($filename)) {
-              $profile_img ='assets/' . $imgname . '.jpg';
-              }else {
-              if ($row['sex'] = 'male'){
+             // Check if profile img exists - if not use male/female placeholder img
+            if($row['photo']==""){
+              if($row['Sex']=="male"){
               $profile_img = $img_male;
-              } else {
+              }else {
                 $profile_img = $img_female;
               }
-              };
+            }else {
+               $profile_img =  'assets/' . $row['photo'];
+            }
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";
            

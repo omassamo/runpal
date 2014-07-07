@@ -37,7 +37,7 @@
 
   <!-- start form -->
 
-  <form action="insert.php" method="post">
+  <form enctype="multipart/form-data" action="insert.php" method="POST">
   
   <!-- name -->
 
@@ -61,15 +61,13 @@
     <input class="form-control" type="email" name="email" placeholder="enter e-mail address">
   </div> 
 
-  <!-- Updates yes/no -->
+     <!-- img -->
+
+  <div class="col-md-12 section-wrapper2 center green">
+    <h3>Upload profile picture</h3> 
+    <input class="upload" type="file" enctype="multipart/form-data" accept="file/jpg, file/gif" name="photo">
+  </div> 
   
-<!--   <div class="col-md-12 section-wrapper2 center">
-    <h3>Do you want to receive updates about the Run Pal project?</h3> 
-    <input type="radio" name="updates" value="yes"> Yes
-    <input type="radio" name="updates" value="no"> No
-    <br>
-  </div>  
- -->
   <!-- Sex -->
   
   <div class="col-md-12 section-wrapper2 center">

@@ -10,6 +10,10 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
+$target = "assets/"; 
+$photo_name = str_replace(' ', '', $_POST['name']) . ".jpg";  
+$target = $target . $photo_name; 
+
 // escape variables for security
 $name = mysqli_real_escape_string($con, $_POST['name']);
 $age = mysqli_real_escape_string($con, $_POST['age']);
@@ -37,9 +41,10 @@ $info1 = mysqli_real_escape_string($con, $_POST['info1']);
 $info2 = mysqli_real_escape_string($con, $_POST['info2']);
 $info3 = mysqli_real_escape_string($con, $_POST['info3']);
 // $feedback = mysqli_real_escape_string($con, $_POST['feedback']);
+$photo = ($_FILES['photo']['name']);
 
-$sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, goal, info1, info2, info3)
-VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$goal', '$info1', '$info2', '$info3')";
+$sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, goal, info1, info2, info3, photo)
+VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$goal', '$info1', '$info2', '$info3', '$photo')";
 
 
 // if(isset($_POST['day'])) {
@@ -62,6 +67,10 @@ if (!mysqli_query($con,$sql)) {
 // header( 'Location: http://runpal.org/runpalscph.html' ) ;
 
 // echo "connection";
+
+//Writes the photo to the server 
+move_uploaded_file($_FILES['photo']['tmp_name'], $target);
+
 mysqli_close($con);
 
 ?>
@@ -139,12 +148,17 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
       </span>
     </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-      <form method="post">
+      <form action="runpal_results.php" method="post">
       <li role="presentation"><input type="submit" name="city" value="All cities"/><a role="menuitem" tabindex="-1" href="#"></a></li>
 
 <?php 
+    // Localhost
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
         mysql_select_db('runpal');
+        
+    // Deployed connection to database
+    // $connection = mysql_connect("localhost", "i72322", "29Sushi98");
+    //   mysql_select_db('runpal_org_01');
 
     $query = "SELECT * FROM Runpal group by city order by city ASC"; //You don't need a ; like you do in SQL
     $result = mysql_query($query);    
@@ -168,9 +182,13 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 </div>
 
 <?php
+    // Localhost connection to database
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
         mysql_select_db('runpal');
-    // echo "connection";
+    
+    // Deployed connection to database
+    // $connection = mysql_connect("localhost", "i72322", "29Sushi98");
+    //   mysql_select_db('runpal_org_01');
 
     $city = $_POST['city'];
     // $query = "SELECT * FROM Runpal WHERE city= " .$city; //You don't need a ; like you do in SQL:: where city=post

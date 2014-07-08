@@ -10,11 +10,11 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$target = "assets/"; 
+$target = "assets/";
 $photo = ($_FILES['photo']['name']);
 $ext = pathinfo($photo, PATHINFO_EXTENSION);
-$photo_name = str_replace(' ', '', $_POST['name']) . "." . $ext;  
-$target = $target . $photo_name; 
+$photo_name = uniqid() . $ext; 
+$target = $target . $photo_name;
 
 // escape variables for security
 $name = mysqli_real_escape_string($con, $_POST['name']);
@@ -49,7 +49,7 @@ VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '
 
 
 // if(isset($_POST['day'])) {
-// $day = implode(",", $_POST['day']);   
+// $day = implode(",", $_POST['day']);  
 // } else {
 // $day = "";
 // }
@@ -69,7 +69,7 @@ if (!mysqli_query($con,$sql)) {
 
 // echo "connection";
 
-//Writes the photo to the server 
+//Writes the photo to the server
 move_uploaded_file($_FILES['photo']['tmp_name'], $target);
 
 mysqli_close($con);
@@ -84,19 +84,19 @@ mysqli_close($con);
     <link rel="stylesheet" type="text/css" href="fonts/MyFontsWebfontsKit/MyFontsWebfontsKit.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    
+   
     <title>
       RunPal
     </title>
   </head>
-  
+ 
   <!-- Container start -->
-  
+ 
   <div class="content-container">
-    
-    
+   
+   
     <!-- Header -->
-    
+   
     <body>
       <div class="col-md-12 col-xl-12 col-xs-12 header" id="top">
         <h1 class="">
@@ -128,9 +128,9 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 // echo distance(32.9697, -96.80322, 29.46786, -98.53506, "K") . " Kilometers<br>";
 
 ?>
-  
+ 
 <div class="col-md-12 section-wrapper2 center">
-  
+ 
   <!-- <h3>
     Show Run Pals from ...
   </h3> -->
@@ -139,9 +139,9 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
       Everywhere
     </button>
   </a> -->
-  
+ 
   <!-- Select unique cities and add button -->
-  
+ 
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
       Choose city
@@ -152,17 +152,17 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
       <form action="runpal_results.php" method="post">
       <li role="presentation"><input type="submit" name="city" value="All cities"/><a role="menuitem" tabindex="-1" href="#"></a></li>
 
-<?php 
+<?php
     // Localhost
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
         mysql_select_db('runpal');
-        
+       
     // Deployed connection to database
     // $connection = mysql_connect("localhost", "i72322", "29Sushi98");
     //   mysql_select_db('runpal_org_01');
 
     $query = "SELECT * FROM Runpal group by city order by city ASC"; //You don't need a ; like you do in SQL
-    $result = mysql_query($query);    
+    $result = mysql_query($query);   
     $num_rows = mysql_num_rows($result);
     // $city_nospace = str_replace(' ', '', $row['city']);
     // $city_nocaps = strtolower($city_nospace);
@@ -175,7 +175,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             echo "<li><input type='submit' name='city' value='" . $row['city'] . "' role='presentation'><a role='menuitem' tabindex='-1' href='#'/></a></li>";
           }
           };
-     mysql_close(); //Make sure to close out the database connection      
+     mysql_close(); //Make sure to close out the database connection     
 ?>
       </form>
     </ul>
@@ -186,14 +186,14 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
     // Localhost connection to database
     $connection = mysql_connect('localhost', 'root', 'root'); //The Blank string is the password
         mysql_select_db('runpal');
-    
+   
     // Deployed connection to database
     // $connection = mysql_connect("localhost", "i72322", "29Sushi98");
     //   mysql_select_db('runpal_org_01');
 
     $city = $_POST['city'];
     // $query = "SELECT * FROM Runpal WHERE city= " .$city; //You don't need a ; like you do in SQL:: where city=post
-    
+   
     if($city == "All cities") {
       $query = "SELECT * FROM Runpal";
     }else {
@@ -202,12 +202,12 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
     $result = mysql_query($query);
     $num_rows = mysql_num_rows($result);
-    
+   
     // echo "<table>"; // start a table tag in the HTML
 
-    // Set male/female placeholder images  
+    // Set male/female placeholder images 
     $img_male = 'assets/male.jpg';
-    $img_female = 'assets/female.jpg';  
+    $img_female = 'assets/female.jpg'; 
 
 
     while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
@@ -222,12 +222,12 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             $long = $response['results'][0]['geometry']['location']['lng'];
 
             // set img name for each user
-            $imgname = str_replace(' ', '', $row['name']);  
+            // $imgname = str_replace(' ', '', $row['name']); 
 
             // Check if profile img exists - if not use male/female placeholder img
-            $filename = 'assets/' . $imgname . '.jpg';
-              if (file_exists($filename)) {
-              $profile_img ='assets/' . $imgname . '.jpg';
+            $filename = 'assets/' . $row['photo'];
+              if ($row['photo'] <> "") {
+              $profile_img = $filename;
               }else {
               if ($row['sex'] = 'male'){
               $profile_img = $img_male;
@@ -237,7 +237,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
               };
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";
-           
+          
               echo "<ul>";
 
             // echo "<tr>";
@@ -270,7 +270,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['day2'] = ",&nbsp;Tue";
                 }else {
                   $row['day2'] = "Tue";
-                } 
+                }
                 }else if ($row['day2'] == 0){
                   $row['day2'] = "";
                 };
@@ -280,7 +280,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['day3'] = ",&nbsp;Wed";
                 }else {
                   $row['day3'] = "Wed";
-                } 
+                }
                 }else if ($row['day3'] == 0){
                   $row['day3'] = "";
                 };
@@ -290,7 +290,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['day4'] = ",&nbsp;Thu";
                 }else {
                   $row['day4'] = "Thu";
-                } 
+                }
                 }else if ($row['day4'] == 0){
                   $row['day4'] = "";
                 };
@@ -300,7 +300,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['day5'] = ",&nbsp;Fri";
                 }else {
                   $row['day5'] = "Fri";
-                } 
+                }
                 }else if ($row['day5'] == 0){
                   $row['day5'] = "";
                 };
@@ -310,7 +310,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['day6'] = ",&nbsp;Sat";
                 }else {
                   $row['day6'] = "Sat";
-                } 
+                }
                 }else if ($row['day6'] == 0){
                   $row['day6'] = "";
                 };
@@ -320,14 +320,14 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['day7'] = ",&nbsp;Sun";
                 }else {
                   $row['day7'] = "Sun";
-                } 
+                }
                 }else if ($row['day7'] == 0){
                   $row['day7'] = "";
                 };
 
                 echo "<li>" . "Days:&nbsp;" . $row['day1'] . $row['day2'] . $row['day3'] . $row['day4'] . $row['day5'] . $row['day6'] . $row['day7'] . "</li>";
-               
-                echo "<li>" . "Between:&nbsp;" . $row['time1'] . "&nbsp; and &nbsp;". $row['time2'] . "</li>"; 
+              
+                echo "<li>" . "Between:&nbsp;" . $row['time1'] . "&nbsp; and &nbsp;". $row['time2'] . "</li>";
 
                 if ($row['dist1'] == 1){
                   $row['dist1'] = "Less than 5 k";
@@ -355,14 +355,14 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['dist3'] = "";
                 };
 
-                echo "<li>" . "Distances:&nbsp;" . $row['dist1'] . $row['dist2'] . $row['dist3'] . "</li>"; 
+                echo "<li>" . "Distances:&nbsp;" . $row['dist1'] . $row['dist2'] . $row['dist3'] . "</li>";
 
                 if ($row['pace1'] == 1){
                   $row['pace1'] = "Less than 4:30 min/km";
                 }else {
                   $row['pace1'] = "";
                 };
-                
+               
                 if ($row['pace2'] == 1){
                   if($row['pace1'] <> ""){
                   $row['pace2'] = ",&nbsp;less than 5:30 min/km";
@@ -383,7 +383,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                   $row['pace3'] = "";
                 };
 
-                echo "<li>" . "Paces:&nbsp;" . $row['pace1'] . $row['pace2'] . $row['pace3'] . "</li>";  
+                echo "<li>" . "Paces:&nbsp;" . $row['pace1'] . $row['pace2'] . $row['pace3'] . "</li>"; 
 
                 echo "<li>" . "Goal with running:&nbsp;" . $row['goal'] . "</li>";
 
@@ -393,7 +393,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             //     // echo "<li>latitude: " . $lat . " longitude: " . $long . "</li>";
             //  echo "</tr>";  //$row['index'] the index here is a field name
                 echo "</div>";
-             
+            
         }else
         {
             // echo "<tr>";
@@ -410,13 +410,13 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
 ?>
       <form action="insert2.php" method="post">
-       
+      
         <div class="section-wrapper2 col-md-4 col-xl-4 col-xs-12">
-          <h3>What do you think about <br> the Run Pal concept?</h3> 
+          <h3>What do you think about <br> the Run Pal concept?</h3>
           <input class="form-control" type="text" textarea rows="10" name="feedback" placeholder="Enter your anonymous feedback">
         <br>
 
-        <!-- submit--> 
+        <!-- submit-->
 
         <p><button class="btn btn-primary btn-lg col-md-12 col-xl-12 col-xs-12" input type="submit"><h2>Submit feedback</h2></button></p>
         </div>
@@ -424,4 +424,3 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
     </body>
   </div>
 </html>
-

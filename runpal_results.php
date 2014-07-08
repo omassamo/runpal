@@ -153,9 +153,9 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
               }else {
                 $profile_img = $img_female;
               }
-            }else {
-               $profile_img =  'assets/' . $row['photo'];
-            }
+              }else {
+                 $profile_img =  'assets/' . $row['photo'];
+              }
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";
            

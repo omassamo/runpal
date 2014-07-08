@@ -10,10 +10,20 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
+// image folder
 $target = "assets/";
 $photo = ($_FILES['photo']['name']);
+// get extension
 $ext = pathinfo($photo, PATHINFO_EXTENSION);
-$photo_name = uniqid() . $ext; 
+
+// check if any file 
+if ($photo == ""){
+  $photo_name == "";
+} else {
+  $photo_name = uniqid() . "." .  $ext; 
+}
+
+// target for photo
 $target = $target . $photo_name;
 
 // escape variables for security
@@ -47,27 +57,9 @@ $info3 = mysqli_real_escape_string($con, $_POST['info3']);
 $sql="INSERT INTO Runpal (name, age, email, sex, day1, day2, day3, day4, day5, day6, day7, time1, time2, city, zip, pace1, pace2, pace3, dist1, dist2, dist3, goal, info1, info2, info3, photo)
 VALUES ('$name', '$age', '$email', '$sex', '$day1', '$day2', '$day3', '$day4', '$day5', '$day6', '$day7', '$time1', '$time2', '$city', '$zip', '$pace1', '$pace2', '$pace3','$dist1','$dist2','$dist3', '$goal', '$info1', '$info2', '$info3', '$photo_name')";
 
-
-// if(isset($_POST['day'])) {
-// $day = implode(",", $_POST['day']);  
-// } else {
-// $day = "";
-// }
-
 if (!mysqli_query($con,$sql)) {
   die(' Error: ' . mysqli_error($con));
 }
-// echo "1 record added";
-
-// url for localhost
-// header( 'Location: http://localhost:8888/runpal/runpal_results.php' ) ;
-
-// Berlin url for Deployed
-// header( 'Location: http://runpal.org/runpal2.html' ) ;
-//  CPH url for Deployed
-// header( 'Location: http://runpal.org/runpalscph.html' ) ;
-
-// echo "connection";
 
 //Writes the photo to the server
 move_uploaded_file($_FILES['photo']['tmp_name'], $target);
@@ -208,6 +200,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
     // Set male/female placeholder images 
     $img_male = 'assets/male.jpg';
     $img_female = 'assets/female.jpg'; 
+    $img_group = 'assets/female.jpg'; 
 
 
     while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
@@ -224,17 +217,29 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             // set img name for each user
             // $imgname = str_replace(' ', '', $row['name']); 
 
-            // Check if profile img exists - if not use male/female placeholder img
-            $filename = 'assets/' . $row['photo'];
-              if ($row['photo'] <> "") {
-              $profile_img = $filename;
-              }else {
-              if ($row['sex'] = 'male'){
-              $profile_img = $img_male;
-              } else {
-                $profile_img = $img_female;
-              }
-              };
+            // Check if profile img exists - if not use male/female placeholder img 
+            if(file_exists($photo_name)){
+              $profile_img =  'assets/' . $row['photo'];
+            }else {
+              if($row['Sex']=="male"){
+                $profile_img = $img_male;
+                }else if($row['Sex']=="female"){
+                  $profile_img = $img_female;
+                }else {
+                   $profile_img = $img_group;
+                }
+            }
+
+                    if($row['photo']==""){
+                      if($row['Sex']=="male"){
+                      $profile_img = $img_male;
+                      }else {
+                        $profile_img = $img_female;
+                      }
+                      }else {
+                         $profile_img =  'assets/' . $row['photo'];
+                      }
+                    
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";
           

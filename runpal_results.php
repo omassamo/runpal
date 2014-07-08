@@ -129,7 +129,8 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
     // Set male/female placeholder images  
     $img_male = 'assets/male.jpg';
-    $img_female = 'assets/female.jpg';  
+    $img_female = 'assets/female.jpg';
+    $img_group = 'assets/group.jpg'; 
 
 
     while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
@@ -150,12 +151,14 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             if($row['photo']==""){
               if($row['Sex']=="male"){
               $profile_img = $img_male;
-              }else {
+              }else if($row['Sex']=="female"){
                 $profile_img = $img_female;
+              } else {
+                $profile_img = $img_group;
               }
-              }else {
-                 $profile_img =  'assets/' . $row['photo'];
-              }
+            }else {
+               $profile_img =  'assets/' . $row['photo'];
+            }
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";
            

@@ -200,7 +200,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
     // Set male/female placeholder images 
     $img_male = 'assets/male.jpg';
     $img_female = 'assets/female.jpg'; 
-    $img_group = 'assets/female.jpg'; 
+    $img_group = 'assets/group.jpg'; 
 
 
     while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
@@ -220,7 +220,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             // Check if profile img exists - if not use male/female placeholder img 
             if(file_exists($photo_name)){
               $profile_img =  'assets/' . $row['photo'];
-            }else {
+              }else {
               if($row['Sex']=="male"){
                 $profile_img = $img_male;
                 }else if($row['Sex']=="female"){
@@ -228,18 +228,8 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
                 }else {
                    $profile_img = $img_group;
                 }
-            }
-
-                    if($row['photo']==""){
-                      if($row['Sex']=="male"){
-                      $profile_img = $img_male;
-                      }else {
-                        $profile_img = $img_female;
-                      }
-                      }else {
-                         $profile_img =  'assets/' . $row['photo'];
-                      }
-                    
+              }
+            
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";
           

@@ -1,0 +1,123 @@
+
+  <!-- start form -->
+
+  <form enctype="multipart/form-data" action="insert.php" method="POST"> 
+
+<!-- name -->
+
+  <div class="col-md-12 section-wrapper2 center">
+    <h3>What's your group name?</h3>
+    <input class="form-control" type="text" name="name" placeholder="enter name" required>
+  </div>
+
+  <!-- age -->
+
+  <div class="col-md-12 section-wrapper2 center">
+    <h3>What's the age span?</h3>
+    <input class="form-control" type="text" name="age" placeholder="enter age span">
+  </div> 
+
+   <!-- e-mail -->
+
+  <div class="col-md-12 section-wrapper2 center">
+    <h3>What's your e-mail address?</h3>
+    <p>Your e-mail address will be used to contact you about possible Run Pals</p>
+    <input class="form-control" type="email" name="email" placeholder="enter e-mail address">
+  </div>
+
+     <!-- img -->
+
+  <div class="col-md-12 section-wrapper2 center green">
+    <h3>Upload profile picture</h3>
+    <input class="upload" type="file" enctype="multipart/form-data" accept="file/jpg, file/gif" name="photo">
+  </div>
+ 
+  <!-- Sex -->
+ 
+  <div class="col-md-12 section-wrapper2 center">
+    <h3>Genders in group?</h3>
+    <input type="checkbox" name="sex" value="male"> Male </input>
+    <input type="checkbox" name="sex" value="female"> Female
+    <input type="checkbox" name="sex" value="both"> Both
+    <br>
+  </div> 
+
+   <!-- day -->
+ 
+  <div class="col-md-12 section-wrapper2 center">
+    <h3>Which days do you run?</h3>
+    <input type="checkbox" name="day1" value="1"> Monday <br>
+    <input type="checkbox" name="day2" value="1"> Tuesday <br>
+    <input type="checkbox" name="day3" value="1"> Wednesday <br>
+    <input type="checkbox" name="day4" value="1"> Thursday <br>
+    <input type="checkbox" name="day5" value="1"> Friday <br>
+    <input type="checkbox" name="day6" value="1"> Saturday <br>
+    <input type="checkbox" name="day7" value="1"> Sunday
+  </div>
+
+  <!-- time1 and time2 -->
+ 
+  <div class="col-md-12 section-wrapper2 center">
+    <h3>Between </h3>
+    <input class="form-control" type="text" name="time1" placeholder="hh:mm">
+    and
+    <input class="form-control" type="text" name="time2" placeholder="hh:mm"><br>
+  </div>
+ 
+  <!-- city -->
+
+  <div class="col-md-12 section-wrapper2 center" required> 
+    <h3>In which city?</h3>
+    <input class="form-control" type="text" name="city" placeholder="enter city"><br>
+  </div>
+
+  <!-- zip -->
+
+  <div class="col-md-12 section-wrapper2 center"> 
+    <h3>Where do you begin?</h3>
+    <input class="form-control" type="text" name="zip" placeholder="enter zip"><br>
+  </div>
+ 
+  <!-- pace -->
+
+  <div class="col-md-12 section-wrapper2 center">
+    <h3>Which paces do you run?</h3>
+    <input type="checkbox" name="pace1" value="1"> Less than 4:30 min/km <br>
+    <input type="checkbox" name="pace2" value="1"> Less than 5:30 min/km <br>
+    <input type="checkbox" name="pace3" value="1"> More than 5:30 m/km
+  </div>
+ 
+  <!-- distance -->
+
+  <div class="col-md-12 section-wrapper2 center">
+    <br><h3>Which distances do you run?</h3>
+    <input type="checkbox" name="dist1" value="1"> Less than 5 km <br>
+    <input type="checkbox" name="dist2" value="1"> Less than 10 km <br>
+    <input type="checkbox" name="dist3" value="1"> More than 10 km
+  </div>
+
+<br>
+
+<!-- goals -->
+
+  <div class="col-md-12 section-wrapper2 center"> 
+    <h3>What are your reasons for running?</h3>
+    <input class="form-control" type="text" name="goal" placeholder="enter free text"><br>
+  </div>
+
+ <!-- info -->
+
+  <div class="col-md-12 section-wrapper2 center"> 
+    <h3>Three things you would like to know about your running partners?</h3>
+    <input class="form-control" type="text" name="info1" placeholder="enter subject"><br>
+    <input class="form-control" type="text" name="info2" placeholder="enter subject"><br>
+    <input class="form-control" type="text" name="info3" placeholder="enter subject"><br>
+  </div>
+
+  <!-- submit -->
+
+<div class="col-md-12 section-wrapper2 center">
+<button class="col-xs-12 btn btn-primary btn-lg" input type="submit"><h2>Find Run Pals</h2></button>
+</div>
+</form>
+  <!-- end form -->

@@ -1,0 +1,473 @@
+# Webalizer V2.01-10 Incremental Data - 07/06/2014 18:00:11
+2014 7 6 18 0 11
+388 207 49 36 20 31 4097513 177 56 0
+12 2 89 1 6
+19 13 267510 10 11 8
+25 12 433507 10 10 8
+199 111 1670214 9 87 11
+117 56 1446016 15 52 15
+8 6 17243 3 6 3
+20 9 263023 12 11 11
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+5 3 133053 2
+8 6 297587 2
+2 1 3133 0
+2 1 3851 1
+0 0 0 0
+26 15 94951 11
+1 1 2385 1
+1 1 1667 0
+0 0 0 0
+0 0 0 0
+45 9 160155 36
+9 9 240595 4
+26 24 613408 6
+35 16 505499 12
+2 2 60634 1
+5 2 7838 3
+43 27 561041 17
+17 2 8274 9
+2 1 3134 0
+60 29 290548 27
+92 54 992373 40
+2 2 4051 1
+4 2 111926 3
+1 0 1410 1
+0
+0
+0
+207
+0
+0
+0
+0
+0
+2
+0
+3
+7
+0
+106
+0
+0
+0
+0
+0
+0
+62
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+# -urls- 
+/
+0 45 7811898652355461120 98360 35 10
+/develop/fonts/MyFontsWebfontsKit/MyFontsWebfontsKit.css
+0 24 160029536 12330 0 0
+/develop/runpal_results.php
+0 28 0 133536 3 1
+/develop/assets/male.jpg
+1 8 0 20350 0 0
+/fonts/MyFontsWebfontsKit/MyFontsWebfontsKit.css
+0 9 0 8724 0 0
+/assets/tina_300.jpg
+1 2 0 15896 0 0
+/runpalscph.html
+0 3 0 6424 0 0
+/assets/mikkel_300.jpg
+1 2 0 27480 0 0
+/assets/tapirik_dropbox.jpg
+1 2 0 209436 0 0
+/develop/insert.php
+0 26 0 102203 0 0
+/insert.php
+0 1 0 2300 0 1
+/fonts/MyFontsWebfontsKit/webfonts/29AC05_0_0.eot
+0 1 0 29491 0 0
+/develop/assets/NadjalaCour.jpg
+1 6 0 58842 0 0
+/develop/assets/Kristina.jpg
+1 2 109 31441 0 0
+/develop/assets/Tariq.jpg
+1 3 4048790135175131437 13164 0 0
+/develop/js/bootstrap.js
+0 22 12643063211062931001 387834 0 0
+/runpal1.html
+0 6 160041840 22393 4 1
+/css/bootstrap.css
+0 12 0 1023346 0 0
+/develop/assets/Mody.jpg
+1 6 0 39800 0 0
+/fonts/MyFontsWebfontsKit/webfonts/29AC05_0_0.woff
+0 5 0 117246 0 0
+/assets/lisa_300.jpg
+1 2 0 23398 0 0
+/js/bootstrap.js
+0 10 0 350609 0 0
+/develop/assets/MatiasBruhn.jpg
+1 6 0 47073 0 0
+/assets/nbro_300.jpg
+1 2 0 17212 0 0
+/runpal3.html
+0 7 0 5576 1 1
+/develop/fonts/MyFontsWebfontsKit/webfonts/29AC05_0_0.eot
+0 2 0 58981 0 0
+/develop/assets/favicon.gif
+1 6 0 7003 0 0
+/assets/matias_300.jpg
+1 2 0 15693 0 0
+/develop/assets/MikkelO.jpg
+1 3 0 54781 0 0
+/assets/thomas_300.jpg
+1 2 0 14987 0 0
+/develop/runpal1.html
+0 6 0 17506 0 0
+/develop/
+0 8 0 14704 3 2
+/assets/favicon.gif
+1 9 0 13505 0 0
+/develop/css/bootstrap.css
+0 24 0 842715 0 0
+/develop/fonts/MyFontsWebfontsKit/webfonts/29AC05_0_0.woff
+0 7 0 156380 0 0
+/develop/assets/FelixNielsen.jpg
+1 6 0 29599 0 0
+# End Of Table - urls
+# -sites- (monthly)
+37.58.100.227-static.reverse.softlayer.com
+0 1 0 1410 0 0
+-
+msnbot-199-30-20-6.search.msn.com
+0 2 1 106103 0 0
+-
+176.123.12.10
+0 3 0 4399 1 1404331718
+-
+188.92.76.167
+0 1 1 278 1 1404265360
+/
+crawl-66-249-67-211.googlebot.com
+0 2 1 2664 0 0
+-
+138.157.251.23.bc.googleusercontent.com
+0 1 1 2385 1 1404406334
+/
+116.115.211.223
+0 1 0 1429 1 1404642235
+-
+23.81.179.226.rdns.as15003.net
+0 1 1 2385 1 1404426851
+/
+212.237.86.131
+0 25 20 773752 2 1404480439
+/runpal3.html
+e179140143.adsl.alicedsl.de
+0 6 0 1043 1 1404296845
+/runpal1.html
+crawl-66-249-67-198.googlebot.com
+0 5 2 9709 4 1404667469
+/
+173.252.74.113
+0 1 1 2432 1 1404254939
+/
+173.252.74.118
+0 1 1 104762 0 0
+-
+crawl-66-249-69-182.googlebot.com
+0 2 1 3851 1 1404444931
+/
+google-proxy-66-249-93-58.google.com
+0 2 2 4052 1 1404651318
+/
+117.6.115.249
+0 1 0 1429 1 1404642272
+-
+crawl-66-249-78-14.googlebot.com
+0 2 1 59792 0 0
+-
+ns321221.ip-37-187-142.eu
+0 1 1 2328 1 1404214514
+/
+42.120.160.41
+0 1 1 2385 1 1404541926
+/
+crawl-66-249-78-7.googlebot.com
+0 3 3 131414 1 1404262833
+/
+g225018060.adsl.alicedsl.de
+0 189 101 1638733 4 1404450645
+/develop/runpal_results.php
+dedic336.hidehost.net
+0 3 0 4399 1 1404479610
+-
+92.f5.344a.static.theplanet.com
+0 1 1 2347 1 1404253615
+/
+google-proxy-66-249-81-132.google.com
+0 2 2 4051 1 1404251951
+/
+65.170.211.130.bc.googleusercontent.com
+0 1 1 2385 1 1404579177
+/
+177.179.211.130.bc.googleusercontent.com
+0 1 1 2385 1 1404665493
+/
+192.34.58.199
+0 6 6 234215 1 1404471859
+/runpal1.html
+b100295.yse.yahoo.net
+0 2 1 3738 1 1404367162
+/
+195.230.115.207
+0 1 1 2347 1 1404487970
+/
+f052195196.adsl.alicedsl.de
+0 25 6 32703 2 1404491628
+/develop/runpal_results.php
+37.58.100.236-static.reverse.softlayer.com
+0 1 0 1410 0 0
+-
+23.108.65.3.rdns.as15003.net
+0 24 0 5496 1 1404469037
+-
+crawl-66-249-78-8.googlebot.com
+0 2 0 2934 0 0
+-
+112.64.235.245
+0 2 2 60634 1 1404396749
+/
+crawl-66-249-67-224.googlebot.com
+0 1 1 127831 0 0
+-
+brln-4dba22fa.pool.mediaways.net
+0 13 13 308473 1 1404476681
+/develop/insert.php
+spider-37-140-141-31.yandex.com
+0 25 17 49405 4 1404538161
+/
+crawl-66-249-78-78.googlebot.com
+0 3 2 130495 0 0
+-
+crawl-66-249-78-71.googlebot.com
+0 4 2 5116 4 1404348973
+/runpal1.html
+59.220.178.107.bc.googleusercontent.com
+0 1 1 2385 1 1404492721
+/
+node-3o4.pool-118-172.dynamic.totbb.net
+0 1 0 1429 1 1404642269
+-
+mail.novavenecia.es.gov.br
+0 1 0 1429 1 1404642264
+-
+cpanel4.fozzy.com
+0 1 0 1410 1 1404517190
+-
+220-135-54-37.pool.ukrtel.net
+0 1 0 1429 1 1404642237
+-
+www.whois.sc
+0 2 1 3776 1 1404415610
+/
+16.83.59.108.bc.googleusercontent.com
+0 1 1 2385 1 1404319748
+/
+google-proxy-66-249-81-58.google.com
+0 9 9 236807 3 1404473240
+/
+msnbot-157-55-39-218.search.msn.com
+0 2 1 6979 1 1404478506
+/runpal1.html
+204.130.211.130.bc.googleusercontent.com
+0 1 1 2385 1 1404233402
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+msnbot-199-30-20-6.search.msn.com
+0 2 1 106103 0 0
+-
+crawl-66-249-67-211.googlebot.com
+0 2 1 2664 0 0
+-
+116.115.211.223
+0 1 0 1429 1 1404642235
+-
+crawl-66-249-67-198.googlebot.com
+0 5 2 9709 4 1404667469
+/
+google-proxy-66-249-93-58.google.com
+0 2 2 4052 1 1404651318
+/
+117.6.115.249
+0 1 0 1429 1 1404642272
+-
+177.179.211.130.bc.googleusercontent.com
+0 1 1 2385 1 1404665493
+/
+crawl-66-249-67-224.googlebot.com
+0 1 1 127831 0 0
+-
+spider-37-140-141-31.yandex.com
+0 2 1 3134 0 0
+-
+node-3o4.pool-118-172.dynamic.totbb.net
+0 1 0 1429 1 1404642269
+-
+mail.novavenecia.es.gov.br
+0 1 0 1429 1 1404642264
+-
+220-135-54-37.pool.ukrtel.net
+0 1 0 1429 1 1404642237
+-
+# End Of Table - sites (daily)
+# -referrers- 
+- (Direct Request)
+0 159
+http://www.runpal.org/develop/insert.php
+1 5
+http://www.google.com/search
+0 2
+http://runpal.org
+0 1
+http://runpal.org/default.php
+0 5
+http://runpal.org/runpalscph.html
+0 14
+http://runpal.org/develop/runpal_results.php
+0 74
+http://localhost:8888/runpal/runpal_results.php
+0 1
+http://runpal.org/develop/
+0 19
+http://cureme.info
+0 1
+http://runpal.org/runpal1.html
+0 11
+http://www.runpal.org/develop/runpal1.html
+1 1
+http://whois.domaintools.com/runpal.org
+0 1
+http://runpal.org/develop/insert.php
+0 36
+http://runpal.org/
+0 12
+http://runpal.org/js/bootstrap.js
+0 1
+http://localhost:8888/runpal/insert.php
+0 2
+http://runpal.org/runpal3.html
+0 15
+http://www.runpal.org/develop/
+1 16
+http://runpal.org/develop/runpal1.html
+0 12
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (
+0 2
+NerdyBot
+0 6
+Mozilla/5.0 (Windows NT 6.1; rv:6.0) Gecko/20110814 Firefox/6.0 Google favicon
+0 8
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+0 25
+Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.99 Safari/533.4
+0 1
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+0 25
+Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/24.0.1290.1 Safari/537.13
+0 3
+Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)
+0 24
+Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A4
+0 101
+Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)
+0 1
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+0 5
+msnbot-media/1.1 (+http://search.msn.com/msnbot.htm)
+0 2
+Mozilla/5.0 (compatible; AhrefsBot/5.0; +http://ahrefs.com/robot/)
+0 2
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+0 21
+facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+0 2
+Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0
+0 1
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT)
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+0 13
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:22.0) Gecko/20100101 Firefox/22.0
+0 5
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0
+0 1
+YisouSpider
+0 1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+0 2
+Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safa
+0 3
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+0 1
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0
+0 1
+Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/35.0.1916.38 Mobile/11D1
+0 31
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+0 88
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/27.0.1453 Safari/537.36
+0 5
+Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/23.0.1271.6 Safari/537.11
+0 3
+Mozilla/4.0
+0 2
+Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)
+0 2
+# End Of Table - agents
+# -search strings- 
+online reputation management akado
+1
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

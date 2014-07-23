@@ -218,17 +218,29 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
             // $imgname = str_replace(' ', '', $row['name']); 
 
             // Check if profile img exists - if not use male/female placeholder img 
-            if(file_exists($photo_name)){
-              $profile_img =  'assets/' . $row['photo'];
-              }else {
+            // if($photo_name <> ""){
+            //   $profile_img =  'assets/' . $row['photo'];
+            //   }else {
+            //   if($row['Sex']=="male"){
+            //     $profile_img = $img_male;
+            //     }else if($row['Sex']=="female"){
+            //       $profile_img = $img_female;
+            //     }else {
+            //        $profile_img = $img_group;
+            //     }
+            //   }
+
+            if($row['photo']==""){
               if($row['Sex']=="male"){
-                $profile_img = $img_male;
-                }else if($row['Sex']=="female"){
-                  $profile_img = $img_female;
-                }else {
-                   $profile_img = $img_group;
-                }
+              $profile_img = $img_male;
+              }else if($row['Sex']=="female"){
+                $profile_img = $img_female;
+              } else {
+                $profile_img = $img_group;
               }
+            }else {
+               $profile_img =  'assets/' . $row['photo'];
+            }
             
 
             echo "<div class='section-wrapper2 col-md-4 col-xl-4 col-xs-12'>";

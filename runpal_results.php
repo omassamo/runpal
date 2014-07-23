@@ -53,15 +53,6 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
   
 <div class="col-md-12 section-wrapper2 center">
   
-  <!-- <h3>
-    Show Run Pals from ...
-  </h3> -->
- <!--  <a id="all" href="runpal_results.php">
-    <button class="btn btn-primary btn-sm">
-      Everywhere
-    </button>
-  </a> -->
-  
   <!-- Select unique cities and add button -->
   
   <div class="dropdown">

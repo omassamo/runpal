@@ -1,4 +1,4 @@
-<?php
+$<?php
 // Localhost connection to database
 $con = mysqli_connect("localhost", "root", "root", "Runpal");
 
